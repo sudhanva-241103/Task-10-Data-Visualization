@@ -1,0 +1,35 @@
+
+EDA FINDINGS – TASK 10
+
+1. Dataset Shape: (200, 5)
+
+2. Missing Values:
+math_score       0
+reading_score    0
+writing_score    0
+study_hours      0
+outlier_flag     0
+dtype: int64
+
+3. Outlier Detection:
+- IQR method used
+- Outliers capped instead of removed
+- Outlier flag column added
+
+4. Correlation Insights:
+               math_score  reading_score  writing_score  study_hours  \
+math_score       1.000000       0.074382      -0.124478     0.084898   
+reading_score    0.074382       1.000000      -0.040636    -0.105126   
+writing_score   -0.124478      -0.040636       1.000000     0.110432   
+study_hours      0.084898      -0.105126       0.110432     1.000000   
+outlier_flag     0.188698      -0.021177       0.124168     0.209454   
+
+               outlier_flag  
+math_score         0.188698  
+reading_score     -0.021177  
+writing_score      0.124168  
+study_hours        0.209454  
+outlier_flag       1.000000  
+
+5. Reason for Not Removing All Outliers:
+Outliers may represent real extreme cases and removing them can cause data loss.
